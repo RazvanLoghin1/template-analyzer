@@ -31,6 +31,12 @@ namespace Microsoft.Azure.Templates.Analyzer.RuleEngines.JsonEngine.Operators
         /// <inheritdoc/>
         public bool TryGetStableVersions(string normalizedLocation, out ISet<string> versions)
         {
+            if (string.IsNullOrEmpty(normalizedLocation))
+            {
+                versions = null;
+                return false;
+            }
+
             EnsureInitialized();
             
             if (_cache != null && _cache.TryGetValue(normalizedLocation, out var set))
