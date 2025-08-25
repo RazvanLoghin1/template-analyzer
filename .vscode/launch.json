@@ -40,6 +40,40 @@
             "stopAtEntry": false
         },
         {
+            "name": "Debug Unit Tests",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet",
+            "args": [
+                "test",
+                "${workspaceFolder}/src/Analyzer.JsonRuleEngine.UnitTests/Analyzer.JsonRuleEngine.UnitTests.csproj",
+                "--logger",
+                "console;verbosity=detailed"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "justMyCode": false
+        },
+        {
+            "name": "Debug Specific Test",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet",
+            "args": [
+                "test",
+                "${workspaceFolder}/src/Analyzer.JsonRuleEngine.UnitTests/Analyzer.JsonRuleEngine.UnitTests.csproj",
+                "--filter",
+                "TryGetStableVersions_WithSpacesInLocation_NormalizesCorrectly",
+                "--logger",
+                "console;verbosity=detailed"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "justMyCode": false
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
