@@ -267,12 +267,9 @@ The `HasStableAKSVersion` operator checks if an AKS cluster is using a stable Ku
 Example:
 ```json
 {
-  "path": "resources[*]",
-  "where": {
-    "path": "type",
-    "equals": "Microsoft.ContainerService/managedClusters"
-  },
-  "hasStableAKSVersion": true
+      "resourceType": "Microsoft.ContainerService/managedClusters",
+      "path": "properties",
+      "hasStableAKSVersion": true
 }
 ```
 

@@ -50,8 +50,9 @@ namespace Microsoft.Azure.Templates.Analyzer.RuleEngines.JsonEngine.Operators
         {
             bool specifiedBoolValue = this.SpecifiedValue.Value<bool>();
 
-            var location = tokenToEvaluate?["location"]?.Value<string>();
-            var kubernetesVersion = tokenToEvaluate?["properties"]?["kubernetesVersion"]?.Value<string>();
+            var resource = tokenToEvaluate?.Parent?.Parent;
+            var location = resource?["location"]?.Value<string>();
+            var kubernetesVersion = tokenToEvaluate?["kubernetesVersion"]?.Value<string>();
 
             if (string.IsNullOrEmpty(location) || string.IsNullOrEmpty(kubernetesVersion))
             {
