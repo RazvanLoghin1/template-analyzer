@@ -1,0 +1,16 @@
+[
+  {
+    "id": "TA-TEST-001",
+    "name": "AKS.UseStableKubernetesVersion", 
+    "shortDescription": "AKS clusters should use stable Kubernetes versions",
+    "fullDescription": "AKS clusters should use stable Kubernetes versions for their region to ensure security and support.",
+    "recommendation": "Use a stable Kubernetes version for your AKS cluster",
+    "helpUri": "https://example.com",
+    "severity": 2,
+    "evaluation": {
+      "resourceType": "Microsoft.ContainerService/managedClusters",
+      "path": "properties",
+      "hasStableAKSVersion": true
+    }
+  }
+]
